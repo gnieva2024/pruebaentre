@@ -1,5 +1,12 @@
 pipeline {
     agent any
+
+    stage('Clean Report Folder') {
+    steps {
+        bat 'rmdir /s /q C:\\Users\\Graciela\\jmeter\\report'
+    }
+}
+
     stages {
         stage('Checkout') {
             steps {
