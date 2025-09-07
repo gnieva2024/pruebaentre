@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clona tu repositorio
-                git 'https://github.com/gnieva2024/pruebaentre.git'
+                git branch: 'main', url: 'https://github.com/gnieva2024/pruebaentre.git'
             }
         }
         stage('Run JMeter Test') {
