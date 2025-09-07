@@ -3,16 +3,18 @@ pipeline {
 
     stages {
 
-        stage('Clean Report Folder') {
+        stage('Clean Old Results and Report') {
             steps {
                 // Borra la carpeta report si existe
                 bat 'rmdir /s /q C:\\Users\\Graciela\\jmeter\\report'
+                // Borra el archivo results.jtl si existe
+                bat 'del /f /q C:\\Users\\Graciela\\jmeter\\results.jtl'
             }
         }
 
         stage('Checkout') {
             steps {
-                // Clona tu repositorio
+                // Clona tu repositorio en la rama main
                 git branch: 'main', url: 'https://github.com/gnieva2024/pruebaentre.git'
             }
         }
